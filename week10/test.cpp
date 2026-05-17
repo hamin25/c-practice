@@ -10,5 +10,5 @@ int main(){
         cin >> arr[i];
     }
     delete[] arr;
-    return 0;
+    return -1;
 }

@@ -7,9 +7,7 @@ int main(){
     fout << "Hello" ;
     fout.close();
 
-    ifstream fin("data.txt");
-    string str;
-    fin >> str;
-    fin.close();
+    
+
     return 0;
 }

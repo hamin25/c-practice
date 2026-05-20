@@ -30,6 +30,13 @@ public:
     bool isEmpty() {
         return top == -1;
     }
+
+    int peek() {
+        if (top >= 0)
+            return arr[top];
+        return -1;
+    }
+    
 };
 
 int main() {
@@ -37,6 +44,8 @@ int main() {
 
     if (s.isEmpty()) cout << "Stack is empty" << endl;
     else cout << "Stack is not empty" << endl;
+
+    cout << "Top: " << s.peek() << endl;
 
     s.push(10);
     s.push(20);

@@ -27,6 +27,9 @@ public:
         }
         cout << endl;
     }
+    bool isEmpty() {
+        return top == -1;
+    }
 };
 
 int main() {

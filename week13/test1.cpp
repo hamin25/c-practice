@@ -13,12 +13,20 @@ public:
     }
 
     void push(int value) {
+        if (top >= 99) {
+            cout << "Stack Overflow" << endl;
+            return;
+        }
         arr[++top] = value;
     }
 
     void pop() {
-        if (top >= 0)
-            top--;
+        if (isEmpty()) {
+            cout << "Stack Underflow" << endl;
+            return;
+        }
+
+        top--;
     }
 
     void print() {
@@ -36,13 +44,7 @@ public:
             return arr[top];
         return -1;
     }
-    void push(int value) {
-        if (top >= 99) {
-            cout << "Stack Overflow" << endl;
-            return;
-        }
-        arr[++top] = value;
-    }
+    
 };
 
 int main() {

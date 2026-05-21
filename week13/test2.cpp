@@ -22,6 +22,15 @@ public:
         arr[rearIndex] = value;
         rearIndex++;
     }
+    void dequeue()
+    {
+        if (frontIndex == rearIndex)
+        {
+            cout << "Queue is empty" << endl;
+            return;
+        }
+        frontIndex++;
+    }
 };
 
 int main()
@@ -30,5 +39,9 @@ int main()
 
     q.enqueue(1);
     q.enqueue(2);
+
+    q.dequeue();
+
+
     return 0;
 }

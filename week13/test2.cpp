@@ -31,6 +31,9 @@ public:
         }
         frontIndex++;
     }
+    int front() {
+    return arr[frontIndex];
+}
 };
 
 int main()
@@ -42,6 +45,6 @@ int main()
 
     q.dequeue();
 
-
+    cout << q.front() << endl;
     return 0;
 }

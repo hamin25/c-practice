@@ -7,5 +7,5 @@ struct Student{
 };
 
 int main(){
-
+    Student* students = new Student[n];
 }

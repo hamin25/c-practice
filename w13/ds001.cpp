@@ -16,7 +16,16 @@ int main(){
 
     Student* students = new Student[n];
 
-    cout << "Array created." << endl;
+    for(int i=0; i<n; i++){
+
+        cout << "\nStudent " << i + 1 << endl;
+
+        cout << "Name : ";
+        cin >> students[i].name;
+
+        cout << "Score : ";
+        cin >> students[i].score;
+    }
 
     delete[] students;
 

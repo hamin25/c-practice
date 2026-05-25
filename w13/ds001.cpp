@@ -27,6 +27,16 @@ int main(){
         cin >> students[i].score;
     }
 
+    cout << "\n===== Student List =====\n";
+
+    for(int i=0; i<n; i++){
+
+        cout << students[i].name
+             << " : "
+             << students[i].score
+             << endl;
+    }
+
     delete[] students;
 
     return 0;

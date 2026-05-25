@@ -2,21 +2,24 @@
 #include <string>
 using namespace std;
 
-struct Student{
+struct Student
+{
     string name;
     int score;
 };
 
-int main(){
+int main()
+{
 
     int n;
 
     cout << "Number of students : ";
     cin >> n;
 
-    Student* students = new Student[n];
+    Student *students = new Student[n];
 
-    for(int i=0; i<n; i++){
+    for (int i = 0; i < n; i++)
+    {
 
         cout << "\nStudent " << i + 1 << endl;
 
@@ -29,13 +32,24 @@ int main(){
 
     cout << "\n===== Student List =====\n";
 
-    for(int i=0; i<n; i++){
+    for (int i = 0; i < n; i++)
+    {
 
         cout << students[i].name
              << " : "
              << students[i].score
              << endl;
     }
+    int sum = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        sum += students[i].score;
+    }
+
+    double average = (double)sum / n;
+
+    cout << "\nAverage : " << average << endl;
 
     delete[] students;
 

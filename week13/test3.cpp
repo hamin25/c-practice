@@ -93,23 +93,25 @@ public:
     }
 
     void printInorder(){
-        cout << "Inorder : ";
+        cout << "[ Inorder Traversal ] ";
         inorder(root);
         cout << endl;
     }
 
     void printPreorder(){
-        cout << "Preorder : ";
+        cout << "[ Preorder Traversal ] ";
         preorder(root);
         cout << endl;
     }
 
     void searchValue(int target){
+        cout << "Searching " << target << " : ";
+
         if(search(root, target)){
-            cout << target << " found" << endl;
+            cout << "FOUND" << endl;
         }
         else{
-            cout << target << " not found" << endl;
+            cout << "NOT FOUND" << endl;
         }
     }
 };
@@ -123,11 +125,16 @@ int main(){
     tree.insert(20);
     tree.insert(3);
     tree.insert(7);
+    tree.insert(15);
+    tree.insert(30);
 
     tree.printInorder();
     tree.printPreorder();
 
+    cout << endl;
+
     tree.searchValue(7);
+    tree.searchValue(100);
 
     return 0;
 }

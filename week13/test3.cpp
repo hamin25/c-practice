@@ -42,6 +42,22 @@ private:
         inorder(node->right);
     }
 
+    bool search(Node* node, int target){
+        if(node == nullptr){
+            return false;
+        }
+
+        if(node->data == target){
+            return true;
+        }
+
+        if(target < node->data){
+            return search(node->left, target);
+        }
+
+        return search(node->right, target);
+    }
+
 public:
     BinaryTree(){
         root = nullptr;
@@ -54,6 +70,15 @@ public:
     void printInorder(){
         inorder(root);
         cout << endl;
+    }
+
+    void searchValue(int target){
+        if(search(root, target)){
+            cout << target << " found" << endl;
+        }
+        else{
+            cout << target << " not found" << endl;
+        }
     }
 };
 
@@ -68,6 +93,9 @@ int main(){
     tree.insert(7);
 
     tree.printInorder();
+
+    tree.searchValue(7);
+    tree.searchValue(15);
 
     return 0;
 }

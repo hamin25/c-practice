@@ -42,6 +42,16 @@ private:
         inorder(node->right);
     }
 
+    void preorder(Node* node){
+        if(node == nullptr){
+            return;
+        }
+
+        cout << node->data << " ";
+        preorder(node->left);
+        preorder(node->right);
+    }
+
     bool search(Node* node, int target){
         if(node == nullptr){
             return false;
@@ -83,7 +93,14 @@ public:
     }
 
     void printInorder(){
+        cout << "Inorder : ";
         inorder(root);
+        cout << endl;
+    }
+
+    void printPreorder(){
+        cout << "Preorder : ";
+        preorder(root);
         cout << endl;
     }
 
@@ -108,9 +125,9 @@ int main(){
     tree.insert(7);
 
     tree.printInorder();
+    tree.printPreorder();
 
     tree.searchValue(7);
-    tree.searchValue(15);
 
     return 0;
 }

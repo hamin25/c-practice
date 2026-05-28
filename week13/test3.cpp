@@ -32,6 +32,16 @@ private:
         return node;
     }
 
+    void inorder(Node* node){
+        if(node == nullptr){
+            return;
+        }
+
+        inorder(node->left);
+        cout << node->data << " ";
+        inorder(node->right);
+    }
+
 public:
     BinaryTree(){
         root = nullptr;
@@ -39,6 +49,11 @@ public:
 
     void insert(int value){
         root = insert(root, value);
+    }
+
+    void printInorder(){
+        inorder(root);
+        cout << endl;
     }
 };
 
@@ -49,6 +64,10 @@ int main(){
     tree.insert(10);
     tree.insert(5);
     tree.insert(20);
+    tree.insert(3);
+    tree.insert(7);
+
+    tree.printInorder();
 
     return 0;
 }

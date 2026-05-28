@@ -58,9 +58,24 @@ private:
         return search(node->right, target);
     }
 
+    void clear(Node* node){
+        if(node == nullptr){
+            return;
+        }
+
+        clear(node->left);
+        clear(node->right);
+
+        delete node;
+    }
+
 public:
     BinaryTree(){
         root = nullptr;
+    }
+
+    ~BinaryTree(){
+        clear(root);
     }
 
     void insert(int value){

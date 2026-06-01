@@ -62,6 +62,22 @@ public:
 
         return data[top--];
     }
+    bool isEmpty()
+    {
+        return top == -1;
+    }
+
+    bool isFull()
+    {
+        return top == capacity - 1;
+    }
+
+    int peek()
+    {
+        if (isEmpty())
+            return -1;
+        return data[top];
+    }
 };
 
 int main()
@@ -72,4 +88,6 @@ int main()
     s.push(20);
 
     cout << s.pop() << endl;
+    cout << s.peek() << endl;
+    cout << s.isEmpty() << endl;
 }

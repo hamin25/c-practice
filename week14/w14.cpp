@@ -94,19 +94,24 @@ public:
     }
 };
 
-int main()
-{
+int main(){
     Stack s(5);
 
     s.push(10);
     s.push(20);
-
-    cout << s.pop() << endl;
-    cout << s.peek() << endl;
-    cout << s.isEmpty() << endl;
-
     s.push(30);
     s.push(40);
+    s.push(50);
 
     s.print();
+
+    cout << "Top : " << s.peek() << endl;
+
+    cout << "Pop : " << s.pop() << endl;
+    cout << "Pop : " << s.pop() << endl;
+
+    s.print();
+
+    cout << "Empty : " << s.isEmpty() << endl;
+    cout << "Full : " << s.isFull() << endl;
 }

@@ -1,17 +1,75 @@
-void push(int value){
-    if(top == capacity-1){
-        cout << "Stack Full\n";
-        return;
+#include <iostream>
+using namespace std;
+
+class Stack
+{
+private:
+    int *data;
+    int top;
+    int capacity;
+
+public:
+    Stack(int size)
+    {
+        capacity = size;
+        data = new int[capacity];
+        top = -1;
     }
 
-    data[++top] = value;
-}
+    ~Stack()
+    {
+        delete[] data;
+    }
+    void push(int value)
+    {
+        if (top == capacity - 1)
+        {
+            cout << "Stack Full\n";
+            return;
+        }
 
-int pop(){
-    if(top == -1){
-        cout << "Stack Empty\n";
-        return -1;
+        data[++top] = value;
     }
 
-    return data[top--];
+    int pop()
+    {
+        if (top == -1)
+        {
+            cout << "Stack Empty\n";
+            return -1;
+        }
+
+        return data[top--];
+    }
+    void push(int value)
+    {
+        if (top == capacity - 1)
+        {
+            cout << "Stack Full\n";
+            return;
+        }
+
+        data[++top] = value;
+    }
+
+    int pop()
+    {
+        if (top == -1)
+        {
+            cout << "Stack Empty\n";
+            return -1;
+        }
+
+        return data[top--];
+    }
+};
+
+int main()
+{
+    Stack s(5);
+
+    s.push(10);
+    s.push(20);
+
+    cout << s.pop() << endl;
 }

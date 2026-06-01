@@ -78,6 +78,20 @@ public:
             return -1;
         return data[top];
     }
+    void print()
+    {
+        if (isEmpty())
+        {
+            cout << "Empty\n";
+            return;
+        }
+
+        for (int i = top; i >= 0; i--)
+        {
+            cout << data[i] << " ";
+        }
+        cout << endl;
+    }
 };
 
 int main()
@@ -90,4 +104,9 @@ int main()
     cout << s.pop() << endl;
     cout << s.peek() << endl;
     cout << s.isEmpty() << endl;
+
+    s.push(30);
+    s.push(40);
+
+    s.print();
 }

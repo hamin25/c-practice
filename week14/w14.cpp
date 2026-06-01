@@ -1,24 +1,17 @@
-#include <iostream>
-using namespace std;
-
-class Stack{
-private:
-    int *data;
-    int top;
-    int capacity;
-
-public:
-    Stack(int size){
-        capacity = size;
-        data = new int[capacity];
-        top = -1;
+void push(int value){
+    if(top == capacity-1){
+        cout << "Stack Full\n";
+        return;
     }
 
-    ~Stack(){
-        delete[] data;
-    }
-};
+    data[++top] = value;
+}
 
-int main(){
-    Stack s(5);
+int pop(){
+    if(top == -1){
+        cout << "Stack Empty\n";
+        return -1;
+    }
+
+    return data[top--];
 }

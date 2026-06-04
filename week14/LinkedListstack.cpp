@@ -21,6 +21,12 @@ public:
         topNode = nullptr;
     }
 
+    ~Stack() {
+        while (!isEmpty()) {
+            pop();
+        }
+    }
+
     bool isEmpty() {
         return topNode == nullptr;
     }
@@ -39,6 +45,8 @@ public:
         }
 
         Node* temp = topNode;
+
+        cout << "Removed : " << topNode->data << endl;
 
         topNode = topNode->next;
 
@@ -76,12 +84,42 @@ public:
 int main() {
     Stack s;
 
-    s.push(10);
-    s.push(20);
-    s.push(30);
+    int choice;
+    int value;
 
-    s.display();
-    s.peek();
+    while (true) {
+        cout << "\n1. Push" << endl;
+        cout << "2. Pop" << endl;
+        cout << "3. Peek" << endl;
+        cout << "4. Display" << endl;
+        cout << "5. Exit" << endl;
+        cout << "Select : ";
+        cin >> choice;
 
-    return 0;
+        switch (choice) {
+        case 1:
+            cout << "Value : ";
+            cin >> value;
+            s.push(value);
+            break;
+
+        case 2:
+            s.pop();
+            break;
+
+        case 3:
+            s.peek();
+            break;
+
+        case 4:
+            s.display();
+            break;
+
+        case 5:
+            return 0;
+
+        default:
+            cout << "Invalid menu!" << endl;
+        }
+    }
 }

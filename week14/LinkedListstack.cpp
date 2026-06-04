@@ -44,6 +44,33 @@ public:
 
         delete temp;
     }
+
+    void peek() {
+        if (isEmpty()) {
+            cout << "Stack is empty!" << endl;
+            return;
+        }
+
+        cout << "Top : " << topNode->data << endl;
+    }
+
+    void display() {
+        if (isEmpty()) {
+            cout << "Stack is empty!" << endl;
+            return;
+        }
+
+        Node* current = topNode;
+
+        cout << "Stack : ";
+
+        while (current != nullptr) {
+            cout << current->data << " ";
+            current = current->next;
+        }
+
+        cout << endl;
+    }
 };
 
 int main() {
@@ -53,9 +80,8 @@ int main() {
     s.push(20);
     s.push(30);
 
-    s.pop();
-
-    cout << "Pop completed!" << endl;
+    s.display();
+    s.peek();
 
     return 0;
 }

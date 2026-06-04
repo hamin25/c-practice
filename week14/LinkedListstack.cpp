@@ -20,12 +20,23 @@ public:
     Stack() {
         topNode = nullptr;
     }
+
+    void push(int value) {
+        Node* newNode = new Node(value);
+
+        newNode->next = topNode;
+        topNode = newNode;
+    }
 };
 
 int main() {
     Stack s;
 
-    cout << "Stack created!" << endl;
+    s.push(10);
+    s.push(20);
+    s.push(30);
+
+    cout << "Push completed!" << endl;
 
     return 0;
 }

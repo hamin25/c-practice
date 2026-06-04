@@ -21,11 +21,28 @@ public:
         topNode = nullptr;
     }
 
+    bool isEmpty() {
+        return topNode == nullptr;
+    }
+
     void push(int value) {
         Node* newNode = new Node(value);
 
         newNode->next = topNode;
         topNode = newNode;
+    }
+
+    void pop() {
+        if (isEmpty()) {
+            cout << "Stack is empty!" << endl;
+            return;
+        }
+
+        Node* temp = topNode;
+
+        topNode = topNode->next;
+
+        delete temp;
     }
 };
 
@@ -36,7 +53,9 @@ int main() {
     s.push(20);
     s.push(30);
 
-    cout << "Push completed!" << endl;
+    s.pop();
+
+    cout << "Pop completed!" << endl;
 
     return 0;
 }

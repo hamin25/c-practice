@@ -6,7 +6,7 @@ class Node
 public:
     int data;
     Node *next;
-    Node(int v) : data(v), next=nullptr{};
+    Node(int v) : data(v), next(nullptr) {};
 };
 
 class MyLLQueues
@@ -16,10 +16,10 @@ class MyLLQueues
     int count;
 
 public:
-    void MyLLQueue() : count(0){
+    void MyLLQueues() : count(0){
         front = rear = nullptr;
     }
-    void ~MyLLQueue(){clear();}
+    void ~MyLLQueues(){clear();}
     bool isEmpty() const{ return count==0; }
 
     void enqueue(int value);
